@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: supplier-sla-platform
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

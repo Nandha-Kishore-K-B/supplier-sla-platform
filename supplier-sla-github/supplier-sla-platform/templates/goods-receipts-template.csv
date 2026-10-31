@@ -1,0 +1,2 @@
+shipment_reference,grn_number,receipt_date,physically_received,accepted_quantity,rejected_quantity,disputed_quantity
+SHP-001,GRN-001,2026-10-09,600,600,0,0

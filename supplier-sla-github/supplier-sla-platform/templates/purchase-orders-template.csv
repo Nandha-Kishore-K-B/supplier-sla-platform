@@ -1,0 +1,2 @@
+supplier_code,agreement_number,po_number,order_value,currency,ordered_quantity,promised_date
+SUP-001,AGR-001,PO-1001,100000,INR,1000,2026-10-07

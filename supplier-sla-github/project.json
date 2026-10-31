@@ -1,0 +1,14 @@
+{
+  "name": "supplier-sla-platform",
+  "version": "0.1.0",
+  "description": "Supplier SLA compliance and explainable penalty management MVP starter",
+  "stack": [
+    "Java 21",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL"
+  ],
+  "documentation": "README.md",
+  "status": "MVP starter"
+}

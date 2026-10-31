@@ -1,0 +1,2 @@
+supplier_code,agreement_number,version,effective_from,otif_target_percent,grace_days,grace_unit,penalty_formula,daily_rate,penalty_basis,cap_percent,cap_basis
+SUP-001,AGR-001,1,2026-01-01,95,2,CALENDAR_DAYS,FULL_PO_PER_DAY,0.005,FULL_PO_VALUE,5,MONTHLY_PO_VALUE
