@@ -82,7 +82,7 @@ export default function App() {
           <div className="table-wrap"><table><thead><tr><th>Purchase order</th><th>Supplier</th><th>Promised date</th><th>Completion</th><th>Accepted</th><th>Decision</th><th>Penalty</th><th></th></tr></thead>
             <tbody>{filtered.map(o => <tr key={o.orderNumber} onClick={() => setSelected(o)}>
               <td><b>{o.orderNumber}</b></td><td>{o.supplierName}</td><td>{o.promisedDate}</td><td>{o.completionDate}</td><td>{o.acceptedQuantity.toLocaleString()} / {o.orderedQuantity.toLocaleString()}</td>
-              <td><span className={`pill ${o.status === 'COMPLIANT' ? 'good' : 'bad'}`}>{o.status.replaceAll('_',' ')}</span></td><td>{o.penalty ? money(o.penalty) : '—'}</td><td><ArrowUpRight size={16}/></td>
+              <td><span className={`pill ${o.status === 'COMPLIANT' ? 'good' : 'bad'}`}>{o.status.replace(/ /g, "-")}</span></td><td>{o.penalty ? money(o.penalty) : '—'}</td><td><ArrowUpRight size={16}/></td>
             </tr>)}</tbody></table></div>
         </section>
         <section className="note"><div className="note-icon"><AlertTriangle size={18}/></div><div><b>Decision governance</b><p>These are illustrative demo assessments. Production penalties require the applicable signed agreement, verified receipt evidence, approved exceptions and procurement/finance review.</p></div></section>
@@ -90,7 +90,7 @@ export default function App() {
     </main>
     {selected && <div className="modal-backdrop" onClick={() => setSelected(null)}><div className="modal" onClick={e => e.stopPropagation()}>
       <div className="modal-head"><div><span className="eyebrow">ORDER EXPLANATION</span><h2>{selected.orderNumber}</h2></div><button className="close" onClick={() => setSelected(null)}>×</button></div>
-      <div className="detail-grid"><div><small>Supplier</small><b>{selected.supplierName}</b></div><div><small>Decision</small><b>{selected.status.replaceAll('_',' ')}</b></div><div><small>Promised date</small><b>{selected.promisedDate}</b></div><div><small>Completion date</small><b>{selected.completionDate}</b></div><div><small>Order value</small><b>{money(selected.orderValue)}</b></div><div><small>Penalty (demo)</small><b>{money(selected.penalty)}</b></div></div>
+      <div className="detail-grid"><div><small>Supplier</small><b>{selected.supplierName}</b></div><div><small>Decision</small><b>{selected.status.replace(/ /g, "-")}</b></div><div><small>Promised date</small><b>{selected.promisedDate}</b></div><div><small>Completion date</small><b>{selected.completionDate}</b></div><div><small>Order value</small><b>{money(selected.orderValue)}</b></div><div><small>Penalty (demo)</small><b>{money(selected.penalty)}</b></div></div>
       <div className="explanation"><b>Why this decision?</b><p>{selected.explanation}</p></div>
       <button className="primary full" onClick={() => setSelected(null)}>Close explanation</button>
     </div></div>}
